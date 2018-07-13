@@ -1,4 +1,8 @@
-# Ngfox
+# NGFox Prototype Angular/AWS Application
+
+This is a prototype seed for an Angular 6+ AWS project. It uses a variety of libraries including [NGXS](https://ngxs.gitbook.io/ngxs/), [Shallow-Render](https://github.com/getsaf/shallow-render) based on [Ng-Mocks](https://github.com/ike18t/ng-mocks), and the [Angular CLI](https://cli.angular.io/).
+
+Please refer to my training modules at [NGBeaver](https://github.com/VernacularHam/ngbeaver) to understand how to work with the technologies in this prototype.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
