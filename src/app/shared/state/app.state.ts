@@ -2,17 +2,15 @@ import { State, Action, StateContext } from '@ngxs/store';
 import { SetUsername, SetPageConfigUrl } from './app.actions';
 
 export interface IAppState {
-    username: string;
-    orderId: number;
-    status?: 'pending' | 'confirmed' | 'declined';
+    awsUrl: string;
+    userToken: string;
     pageUrl?: string;
 }
 
 @State<IAppState>({
-    name: 'app',
+    name: 'ng-fox-app',
     defaults: {
-        username: '',
-        orderId: Math.floor(Math.random() * 23000)
+        awsUrl: ''
     }
 })
 export class AppState {
