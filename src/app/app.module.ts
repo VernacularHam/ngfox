@@ -16,8 +16,8 @@ import { AppState } from './shared/state/app.state';
 
 // Function for setting the default restangular configuration
 export function RestangularConfigFactory (RestangularProvider) {
-  RestangularProvider.setBaseUrl('http://api.restngx.local/v1');
-  RestangularProvider.setDefaultHeaders({'Authorization': 'Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1'});
+  RestangularProvider.setBaseUrl('https://f459oxvl6b.execute-api.us-east-1.amazonaws.com/poc');
+  //RestangularProvider.setDefaultHeaders({'Authorization': 'Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1'});
 }
 
 @NgModule({
