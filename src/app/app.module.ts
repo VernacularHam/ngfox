@@ -8,9 +8,6 @@ import { RestangularModule, Restangular } from 'ngx-restangular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SharedTestComponent } from './shared/components/shared-test/shared-test.component';
-import { SharedPipePipe } from './shared/pipes/shared-pipe.pipe';
-import { SharedDirectiveDirective } from './shared/directives/shared-directive.directive';
 import { RouterState } from './shared/state/router.state';
 import { AppState } from './shared/state/app.state';
 import { DemoModule } from './modules/demo/demo.module';
@@ -23,10 +20,7 @@ export function RestangularConfigFactory (RestangularProvider) {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SharedTestComponent,
-    SharedPipePipe,
-    SharedDirectiveDirective
+    AppComponent
   ],
   imports: [
     BrowserModule,

@@ -15,12 +15,19 @@ export class DemoComponentComponent implements OnInit {
   ngOnInit() {
   }
 
-//   <p>
-//   <button (click)="createRecord()">CREATE: POST</button>
-//   <button (click)="getRecords()">GET</button>
-//   <button (click)="updateRecord()">UPDATE: PUT</button>
-//   <button (click)="deleteRecord()">DELETE</button>
-// </p>
+  public createRecord() {
+    //this.restangular.one()
+  }
 
+  public getRecords(): Object[] {
+    return [];
+  }
 
+  public updateRecord() {
+
+  }
+
+  public deleteRecord() {
+
+  }
 }
