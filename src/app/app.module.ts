@@ -4,6 +4,7 @@ import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsFormPluginModule } from '@ngxs/form-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { RestangularModule, Restangular } from 'ngx-restangular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,12 @@ import { SharedPipePipe } from './shared/pipes/shared-pipe.pipe';
 import { SharedDirectiveDirective } from './shared/directives/shared-directive.directive';
 import { RouterState } from './shared/state/router.state';
 import { AppState } from './shared/state/app.state';
+
+// Function for setting the default restangular configuration
+export function RestangularConfigFactory (RestangularProvider) {
+  RestangularProvider.setBaseUrl('http://api.restngx.local/v1');
+  RestangularProvider.setDefaultHeaders({'Authorization': 'Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1'});
+}
 
 @NgModule({
   declarations: [
@@ -29,7 +36,8 @@ import { AppState } from './shared/state/app.state';
     NgxsModule.forRoot([
       RouterState,
       AppState
-    ])
+    ]),
+    RestangularModule.forRoot(RestangularConfigFactory)
   ],
   providers: [],
   bootstrap: [AppComponent]
