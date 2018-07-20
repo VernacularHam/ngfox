@@ -13,6 +13,7 @@ import { SharedPipePipe } from './shared/pipes/shared-pipe.pipe';
 import { SharedDirectiveDirective } from './shared/directives/shared-directive.directive';
 import { RouterState } from './shared/state/router.state';
 import { AppState } from './shared/state/app.state';
+import { DemoModule } from './modules/demo/demo.module';
 
 // Function for setting the default restangular configuration
 export function RestangularConfigFactory (RestangularProvider) {
@@ -37,7 +38,8 @@ export function RestangularConfigFactory (RestangularProvider) {
       RouterState,
       AppState
     ]),
-    RestangularModule.forRoot(RestangularConfigFactory)
+    RestangularModule.forRoot(RestangularConfigFactory),
+    DemoModule
   ],
   providers: [],
   bootstrap: [AppComponent]

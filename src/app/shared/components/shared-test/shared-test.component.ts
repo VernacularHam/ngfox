@@ -11,5 +11,4 @@ export class SharedTestComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

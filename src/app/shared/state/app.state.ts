@@ -3,25 +3,25 @@ import { SetUsername, SetPageConfigUrl } from './app.actions';
 
 export interface IAppState {
     awsUrl: string;
-    userToken: string;
+    userToken?: string;
     pageUrl?: string;
 }
 
 @State<IAppState>({
-    name: 'ng-fox-app',
+    name: 'ngFoxApp',
     defaults: {
         awsUrl: ''
     }
 })
 export class AppState {
-    @Action(SetUsername)
-    setUserName({ patchState }: StateContext<IAppState>, { payload }: SetUsername) {
-        patchState({ username: payload });
-    }
+    // @Action(SetUsername)
+    // setUserName({ patchState }: StateContext<IAppState>, { payload }: SetUsername) {
+    //     patchState({ username: payload });
+    // }
 
-    @Action(SetPageConfigUrl)
-    SetPageConfigUrl({ patchState }: StateContext<IAppState>, { payload }: SetPageConfigUrl) {
-        patchState({ pageUrl: payload });
-    }
+    // @Action(SetPageConfigUrl)
+    // SetPageConfigUrl({ patchState }: StateContext<IAppState>, { payload }: SetPageConfigUrl) {
+    //     patchState({ pageUrl: payload });
+    // }
 
 }
