@@ -41,8 +41,12 @@ export class DemoComponent implements OnInit {
     this.awsPoC.post(newRecord);
   }
 
-  public getRecords(): Object[] {
-    return [];
+  public getRecords() {
+    this.awsPoC.get().subscribe(pocreturn => {
+        console.log('GET: ');
+        console.log(pocreturn);
+      }
+    );
   }
 
   public updateRecord() {
