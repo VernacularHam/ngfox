@@ -4,7 +4,7 @@ import { Restangular } from 'ngx-restangular';
 
 import { SharedModule } from '../../shared/shared.module';
 import { TestComponent } from './test/test.component';
-import { DemoComponentComponent } from './components/demo-component/demo-component.component';
+import { DemoComponent } from './components/demo-component/demo-component.component';
 
 @NgModule({
   imports: [
@@ -13,10 +13,10 @@ import { DemoComponentComponent } from './components/demo-component/demo-compone
   ],
   declarations: [
     TestComponent,
-    DemoComponentComponent
+    DemoComponent
   ],
   exports: [
-    DemoComponentComponent
+    DemoComponent
   ]
 })
 export class DemoModule { }
