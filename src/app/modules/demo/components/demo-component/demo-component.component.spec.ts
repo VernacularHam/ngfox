@@ -1,25 +1,23 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Shallow } from 'shallow-render';
 
 import { DemoComponent } from './demo-component.component';
+import { DemoModule } from '../../demo.module';
 
 describe('DemoComponent', () => {
-  let component: DemoComponent;
-  let fixture: ComponentFixture<DemoComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ DemoComponent ]
-    })
-    .compileComponents();
-  }));
+  let shallow: Shallow<DemoComponent>;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DemoComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    shallow = new Shallow(DemoComponent, DemoModule);
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(shallow).toBeTruthy();
+  });
+
+  it ('renders a CREATE: POST button', async () => {
+    const {find} = await shallow.render('<fox-demo-component></fox-demo-component>');
+
+    expect(find('button').nativeElement.innerText).toBe('CREATE: POST');
   });
 });

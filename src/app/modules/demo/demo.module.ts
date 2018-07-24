@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Restangular } from 'ngx-restangular';
+import { Restangular, RestangularModule } from 'ngx-restangular';
 
 import { SharedModule } from '../../shared/shared.module';
 import { TestComponent } from './test/test.component';
@@ -9,7 +9,8 @@ import { DemoComponent } from './components/demo-component/demo-component.compon
 @NgModule({
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    RestangularModule
   ],
   declarations: [
     TestComponent,

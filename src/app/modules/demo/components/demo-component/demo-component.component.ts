@@ -10,11 +10,12 @@ import { SharedTestComponent} from '../../../../shared/components/shared-test/sh
 })
 export class DemoComponent implements OnInit {
 
-  private awsPoC = this.restangular.one('poc');
+  private awsPoC;
 
   constructor(private restangular: Restangular) { }
 
   ngOnInit() {
+    this.awsPoC = this.restangular.one('poc');
   }
 
   public createRecord() {
