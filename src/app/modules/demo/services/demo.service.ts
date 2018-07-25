@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Restangular } from 'ngx-restangular';
-import { Observable } from '../../../../../node_modules/rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class DemoService {
   private awsPoC;
 
   constructor(private restangular: Restangular) {
-    this.awsPoC = this.restangular.one('poc');
+    this.awsPoC = this.restangular.one('person');
   }
 
   public createRecord(record) {

@@ -14,7 +14,7 @@ import { DemoModule } from './modules/demo/demo.module';
 
 // Function for setting the default restangular configuration
 export function RestangularConfigFactory (RestangularProvider) {
-  RestangularProvider.setBaseUrl('https://f459oxvl6b.execute-api.us-east-1.amazonaws.com');
+  RestangularProvider.setBaseUrl('https://f459oxvl6b.execute-api.us-east-1.amazonaws.com/poc');
   //RestangularProvider.setDefaultHeaders({'Authorization': 'Bearer UDXPx-Xko0w4BRKajozCVy20X11MRZs1'});
 }
 
