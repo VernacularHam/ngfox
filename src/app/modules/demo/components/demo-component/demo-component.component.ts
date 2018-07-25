@@ -1,22 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Restangular } from 'ngx-restangular';
 
 import { SharedTestComponent} from '../../../../shared/components/shared-test/shared-test.component';
+import { DemoService } from '../../services/demo.service';
 
 @Component({
   selector: 'fox-demo-component',
   templateUrl: './demo-component.component.html',
   styleUrls: ['./demo-component.component.scss']
 })
-export class DemoComponent implements OnInit {
+export class DemoComponent {
 
-  private awsPoC;
-
-  constructor(private restangular: Restangular) { }
-
-  ngOnInit() {
-    this.awsPoC = this.restangular.one('poc');
-  }
+  constructor(private demo: DemoService) { }
 
   public createRecord() {
     const newRecord = {
@@ -39,15 +34,11 @@ export class DemoComponent implements OnInit {
         ModifiedOn: '2018-07-19 16:14:52.477'
       }
     };
-    this.awsPoC.post(newRecord);
+    this.demo.createRecord(newRecord);
   }
 
   public getRecords() {
-    this.awsPoC.get().subscribe(pocreturn => {
-        console.log('GET: ');
-        console.log(pocreturn);
-      }
-    );
+    this.demo.getRecords();
   }
 
   public updateRecord() {
@@ -72,7 +63,7 @@ export class DemoComponent implements OnInit {
       }
     };
 
-    this.awsPoC.patch(patchRecord);
+    this.demo.updateRecord(patchRecord);
   }
 
   public deleteRecord() {
@@ -81,6 +72,6 @@ export class DemoComponent implements OnInit {
       Data: 'CC5153D3-2A0B-482B-AEB0-D30E1BBF90DF'
     };
 
-    this.awsPoC.remove(deleteRecord);
+    this.demo.deleteRecord(deleteRecord);
   }
 }
