@@ -1,16 +1,20 @@
 import { TestBed, inject } from '@angular/core/testing';
 import { MockModule } from 'ng-mocks';
 import { DemoService } from './demo.service';
-import { RestangularModule } from 'ngx-restangular';
+import { Restangular } from 'ngx-restangular';
 
 describe('DemoService', () => {
+  let restangularSpy: jasmine.SpyObj<Restangular>;
+
   beforeEach(() => {
+    const spy = jasmine.createSpyObj('Restangular', ['one']);
+
     TestBed.configureTestingModule({
-      providers: [DemoService],
-      imports: [
-        MockModule(RestangularModule)
-      ]
+      providers: [DemoService,
+      { provide: Restangular, useValue: spy}]
     });
+
+    restangularSpy = TestBed.get(Restangular);
   });
 
   it('should be created', inject([DemoService], (service: DemoService) => {
