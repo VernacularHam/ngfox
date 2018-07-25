@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Restangular } from 'ngx-restangular';
 
-import { SharedTestComponent} from '../../../../shared/components/shared-test/shared-test.component';
+import { SharedTestComponent } from '../../../../shared/components/shared-test/shared-test.component';
 import { DemoService } from '../../services/demo.service';
 
 @Component({
@@ -38,7 +38,11 @@ export class DemoComponent {
   }
 
   public getRecords() {
-    this.demo.getRecords();
+    this.demo.getRecords().subscribe(pocreturn => {
+        console.log('GET: ');
+        console.log(pocreturn);
+      }
+    );
   }
 
   public updateRecord() {

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Restangular } from 'ngx-restangular';
+import { Observable } from '../../../../../node_modules/rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,15 +16,13 @@ export class DemoService {
   }
 
   public createRecord(record) {
-    this.awsPoC.post(record);
+    console.log('createRecord:');
+    console.log(record);
+    this.awsPoC.post('', record);
   }
 
-  public getRecords() {
-    this.awsPoC.get().subscribe(pocreturn => {
-        console.log('GET: ');
-        console.log(pocreturn);
-      }
-    );
+  public getRecords(): Observable<any> {
+    return this.awsPoC.get();
   }
 
   public updateRecord(record) {
