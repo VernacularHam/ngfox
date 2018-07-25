@@ -21,8 +21,8 @@ export class DemoService {
     this.awsPoC.post('', record);
   }
 
-  public getRecords(): Observable<any> {
-    return this.awsPoC.get();
+  public getRecords(record): Observable<any> {
+    return this.awsPoC.get(record);
   }
 
   public updateRecord(record) {

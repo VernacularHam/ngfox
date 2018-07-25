@@ -38,7 +38,12 @@ export class DemoComponent {
   }
 
   public getRecords() {
-    this.demo.getRecords().subscribe(pocreturn => {
+    const getRecord = {
+      InitialStepId: '00000000-0000-0000-0000-000000000000',
+      Data: 'CC5153D3-2A0B-482B-AEB0-D30E1BBF90DF'
+    };
+
+    this.demo.getRecords(getRecord).subscribe(pocreturn => {
         console.log('GET: ');
         console.log(pocreturn);
       }
