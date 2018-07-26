@@ -17,9 +17,9 @@ describe('DemoComponent', () => {
     expect(shallow).toBeTruthy();
   });
 
-  it ('renders a CREATE: POST button', async () => {
+  it ('renders four buttons', async () => {
     const {find} = await shallow.render('<fox-demo-component></fox-demo-component>');
 
-    expect(find('button').nativeElement.innerText).toBe('CREATE: POST');
+    expect(find('button')).toHaveFound(4);
   });
 });
