@@ -1,8 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { Shallow } from 'shallow-render';
+import { Shallow } from 'shallow-render/dist';
 
 import { DemoComponent } from './demo-component.component';
 import { DemoModule } from '../../demo.module';
+import { DemoService } from '../../services/demo.service';
+import { of } from 'rxjs';
 
 describe('DemoComponent', () => {
   let shallow: Shallow<DemoComponent>;

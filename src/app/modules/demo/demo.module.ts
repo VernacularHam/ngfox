@@ -5,6 +5,7 @@ import { Restangular, RestangularModule } from 'ngx-restangular';
 import { SharedModule } from '../../shared/shared.module';
 import { TestComponent } from './test/test.component';
 import { DemoComponent } from './components/demo-component/demo-component.component';
+import { DemoService } from './services/demo.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,9 @@ import { DemoComponent } from './components/demo-component/demo-component.compon
   declarations: [
     TestComponent,
     DemoComponent
+  ],
+  providers: [
+    DemoService
   ],
   exports: [
     DemoComponent
