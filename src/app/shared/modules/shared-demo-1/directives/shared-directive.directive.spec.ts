@@ -1,8 +1,8 @@
-import { SharedDirectiveDirective } from './shared-directive.directive';
+import { SharedDirective } from './shared-directive.directive';
 
 describe('SharedDirectiveDirective', () => {
   it('should create an instance', () => {
-    const directive = new SharedDirectiveDirective();
+    const directive = new SharedDirective();
     expect(directive).toBeTruthy();
   });
 });

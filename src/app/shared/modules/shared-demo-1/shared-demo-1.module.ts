@@ -3,14 +3,22 @@ import { CommonModule } from '@angular/common';
 
 // These are barrel imports
 import { SharedTestComponent } from './components';
-import { SharedDirectiveDirective } from './directives';
-import { SharedTestInterface } from './interfaces';
+import { SharedDirective } from './directives';
 import { SharedPipe } from './pipes';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: []
+  declarations: [
+    SharedTestComponent,
+    SharedDirective,
+    SharedPipe
+  ],
+  exports: [
+    SharedTestComponent,
+    SharedDirective,
+    SharedPipe
+  ]
 })
 export class SharedDemo1Module { }

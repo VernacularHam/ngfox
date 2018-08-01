@@ -3,7 +3,7 @@ import { Directive } from '@angular/core';
 @Directive({
   selector: '[foxSharedDirective]'
 })
-export class SharedDirectiveDirective {
+export class SharedDirective {
 
   constructor() { }
 
