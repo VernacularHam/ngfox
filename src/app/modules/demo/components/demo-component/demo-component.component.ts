@@ -14,6 +14,7 @@ export class DemoComponent {
   constructor(private demo: DemoService) { }
 
   public createRecord() {
+    /* ignore coverage */
     const newRecord = {
       InitialStepId: '00000000-0000-0000-0000-000000000000',
       Data: {

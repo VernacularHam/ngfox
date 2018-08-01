@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Restangular, RestangularModule } from 'ngx-restangular';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedDemo1Module } from '../../shared/modules/shared-demo-1/shared-demo-1.module';
 import { TestComponent } from './test/test.component';
 import { DemoComponent } from './components/demo-component/demo-component.component';
 import { DemoService } from './services/demo.service';
@@ -10,7 +10,7 @@ import { DemoService } from './services/demo.service';
 @NgModule({
   imports: [
     CommonModule,
-    SharedModule,
+    SharedDemo1Module,
     RestangularModule
   ],
   declarations: [

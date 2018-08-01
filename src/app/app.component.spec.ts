@@ -1,22 +1,26 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { Shallow } from 'shallow-render';
+
 import { AppComponent } from './app.component';
+import { AppModule } from './app.module';
+
 describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  }));
-  it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  }));
+  let shallow: Shallow<AppComponent>;
+
+  beforeEach(() => {
+    shallow = new Shallow(AppComponent, AppModule);
+  });
+
+  it('should create the app', async () => {
+    // const fixture = TestBed.createComponent(AppComponent);
+    // const app = fixture.debugElement.componentInstance;
+    // expect(app).toBeTruthy();
+
+    const {find} = await shallow.render('<fox-root></fox-root>');
+
+    expect(find('a').nativeElement.innerText).toBeTruthy();
+  });
   it(`should have as title 'fox'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;

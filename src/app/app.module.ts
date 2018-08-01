@@ -8,8 +8,8 @@ import { RestangularModule, Restangular } from 'ngx-restangular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RouterState } from './shared/state/router.state';
-import { AppState } from './shared/state/app.state';
+import { RouterState } from './core/state/router.state';
+import { AppState } from './core/state/app.state';
 import { DemoModule } from './modules/demo/demo.module';
 
 // Function for setting the default restangular configuration
