@@ -9,12 +9,15 @@ import {
 
 declare const require: any;
 
+/* ignore coverage */
 // First, initialize the Angular testing environment.
 getTestBed().initTestEnvironment(
   BrowserDynamicTestingModule,
   platformBrowserDynamicTesting()
 );
+/* ignore coverage */
 // Then we find all the tests.
 const context = require.context('./', true, /\.spec\.ts$/);
+/* ignore coverage */
 // And load the modules.
 context.keys().map(context);

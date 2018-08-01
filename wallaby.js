@@ -78,6 +78,10 @@ module.exports = function (wallaby) {
       window.__moduleBundler.loadTests();
     },
 
+    hints: {
+      ignoreCoverage: /ignore coverage/
+    },
+
     debug: true
   };
 };
