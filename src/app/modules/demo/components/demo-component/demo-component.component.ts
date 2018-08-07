@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Restangular } from 'ngx-restangular';
 
 import { SharedTestComponent } from '../../../../shared/modules/shared-demo-1/components/shared-test/shared-test.component';
 import { DemoService } from '../../services/demo.service';
