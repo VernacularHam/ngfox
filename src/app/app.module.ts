@@ -10,7 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterState } from './core/state/router.state';
 import { AppState } from './core/state/app.state';
-import { DemoModule } from './modules/demo/demo.module';
 
 // Function for setting the default restangular configuration
 export function RestangularConfigFactory (RestangularProvider) {
@@ -32,8 +31,7 @@ export function RestangularConfigFactory (RestangularProvider) {
       RouterState,
       AppState
     ]),
-    RestangularModule.forRoot(RestangularConfigFactory),
-    DemoModule
+    RestangularModule.forRoot(RestangularConfigFactory)
   ],
   providers: [],
   bootstrap: [AppComponent]

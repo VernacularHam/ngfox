@@ -10,7 +10,7 @@ import { DemoService } from '../../services/demo.service';
 })
 export class DemoComponent {
 
-  constructor(private demo: DemoService) { }
+  constructor(private demoSvc: DemoService) { }
 
   public createRecord() {
     /* ignore coverage */
@@ -34,7 +34,7 @@ export class DemoComponent {
         ModifiedOn: '2018-07-19 16:14:52.477'
       }
     };
-    this.demo.createRecord(newRecord);
+    this.demoSvc.createRecord(newRecord);
   }
 
   public getRecords() {
@@ -42,7 +42,7 @@ export class DemoComponent {
       Data: 'CC5153D3-2A0B-482B-AEB0-D30E1BBF90DF'
     };
 
-    this.demo.getRecords(getRecord).subscribe(pocreturn => {
+    this.demoSvc.getRecords(getRecord).subscribe(pocreturn => {
         console.log('GET: ');
         console.log(pocreturn);
       }
@@ -71,7 +71,7 @@ export class DemoComponent {
       }
     };
 
-    this.demo.updateRecord(patchRecord);
+    this.demoSvc.updateRecord(patchRecord);
   }
 
   public deleteRecord() {
@@ -80,6 +80,6 @@ export class DemoComponent {
       Data: 'CC5153D3-2A0B-482B-AEB0-D30E1BBF90DF'
     };
 
-    this.demo.deleteRecord(deleteRecord);
+    this.demoSvc.deleteRecord(deleteRecord);
   }
 }
